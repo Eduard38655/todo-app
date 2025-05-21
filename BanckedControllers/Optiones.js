@@ -1,37 +1,22 @@
+// routes.js
 import express from "express";
-import SQL from "mssql";
-import dbconfig from "./DataBase_SQL.js";
+import pool from "./DataBase_PG.js";
 
 const router = express.Router();
 
- 
+router.post("/NewData", async (req, res) => {
+  const { Status } = req.body;
 
-router.post("/NewData",(req,res)=>{
-const {Status}=req.body
+  try {
+    const result = await pool.query(
+      "SELECT * FROM TODO WHERE Status = $1",
+      [Status]
+    );
+    res.json({ data: result.rows });
+  } catch (error) {
+    console.error("Error executing NewData:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
- SQL.connect(dbconfig).then(pool=>{
-    return pool .request()
-
-    .input("Status",SQL.NVarChar,Status)
-    .query("SELECT * FROM TODO WHERE Status=@Status")
- })
- .then(result=>{
-    try {
-      if (result.recordset) {
-          res.json({data:result.recordset})
-      } else {
-        console.error("There was an error: ",error);
-        
-      }
-    } catch (error) {
-     console.error(error);
-        
-    }
- })
- .catch(error=>console.error(error)
- )
-
-}) 
-
-
-export default router
+export default router;

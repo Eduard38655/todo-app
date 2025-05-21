@@ -40,8 +40,8 @@ const corsOptions = {
   exposedHeaders: ['set-cookie'],
 };
 
-
- app.listen(3000, () => {
-  console.log(`Server is running on port 3000`);
+let PORT= process.env.port
+ app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
  
