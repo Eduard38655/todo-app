@@ -1,14 +1,12 @@
-// DataBase_PG.js
-import pkg from 'pg';
-const { Pool } = pkg;
-
-const pool = new Pool({
-  user:process.env.user,
-  host:process.env.host,
-  database:process.database,
+const dbconfig = {
+  user:process.env.user ,
   password:process.env.password,
-  port:5432,
-  ssl:true,
-});
+  server:process.env.server,
+  database:process.env.database,
+   options: {
+    encrypt: true,
+    trustServerCertificate: true,
+  },
+};
 
-export default pool;
+export default dbconfig
