@@ -1,0 +1,187 @@
+.DivDtalles{
+    width: 50%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.Detalles_Container{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid hsl(233, 14%, 35%);
+    background-color:hsl(237, 14%, 26%) ;
+    
+}
+.Divinput {
+    width: 50px;
+    height: 60px ;
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    margin-left: 15px;
+     
+    
+  
+ }
+  .custom-checkbox-Open{
+  position: absolute;
+    appearance: none;
+border-radius: 100%;
+ width: 30px;
+  height: 30px;
+background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  border: 1px solid hsl(220, 98%, 61%);
+ 
+}
+.custom-text-Open{
+   width: 90%;
+    height: 25px;
+    font-size: 25px;
+    color: hsl(233, 14%, 35%);
+    font-weight: 600;
+ letter-spacing: 1px;
+  text-decoration: line-through hsl(236, 33%, 92%);
+
+}
+.custom-text-Open div{
+  width: 20px;
+  height: 20px;
+ 
+   
+}
+.custom-text-Close{
+   width: 90%;
+    height: 25px;
+    color: hsl(234, 39%, 85%);
+    font-weight: 600;
+ letter-spacing: 1px;
+  font-size: 25px;
+  text-decoration:none;
+}
+   .custom-checkbox-Close{
+    position: absolute;
+    appearance: none;
+border-radius: 100%;
+ width: 30px;
+  height: 30px;
+  background-color: transparent;
+ border: 2px solid hsl(235, 19%, 35%);
+  }
+   .custom-checkbox-Close:hover{
+     border: 1px solid hsl(220, 98%, 61%);
+   }
+.Divinput .custom-label-Open{
+   z-index: 0;
+   margin-left: 14px;
+margin-bottom: 19px;
+
+}
+
+
+.custom-label-Open::after{
+      z-index: 0;
+    width: 50px;
+    height: 50px;
+    content:url( "../Imagen/icon-check.svg");
+    background-size: 200px;
+}
+ 
+
+
+
+.custom-label-Close::after{
+      z-index: 0;
+    width: 50px;
+    height: 50px;
+    content:url("");
+    background-size: 200px;
+}
+.Divinput .custom-label-Close{
+   z-index: 0;
+   margin-left: 14px;
+margin-bottom: 19px;
+
+}
+ 
+
+ 
+ 
+.Detalles_Container:hover .Delete_Button {
+   background: url("../Imagen/icon-cross.svg");
+background-repeat: no-repeat;
+ }
+.Delete_Button{
+  width: 30px;
+  height: 20px;
+   background-repeat: no-repeat;
+  color: wheat;
+  margin-right: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.DivInfo{
+  width: 100%;
+  height:auto;
+     background-color: hsl(237, 14%, 26%);
+     display: flex;
+     flex-direction: column;
+}
+[data-theme='light'] .Detalles_Container{
+  background-color: hsl(0, 0%, 98%);
+  color: hsl(235, 19%, 35%);
+   border-bottom: 2px solid hsl(233, 11%, 84%);
+ box-shadow: 0px 25px 15px 0px hsl(236, 9%, 61%);
+}
+[data-theme='light'] .custom-text-Close{
+  color: hsl(235, 19%, 35%);
+
+} [data-theme='light'] .custom-text-Open {
+ 
+    text-decoration: line-through hsl(236, 9%, 61%);
+}
+ 
+[data-theme='light']  .DivInfo {
+ 
+    background-color: hsl(0, 0%, 98%);
+}
+  
+@media screen and (min-width:375px) and (max-width:415px){
+ 
+  .DivDtalles{
+    width:90%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+   
+}
+[data-theme='light'] .Detalles_Container{
+  background-color: hsl(0, 0%, 98%);
+ box-shadow: 0px 25px 15px 0px hsl(236, 9%, 61%);
+ }
+ 
+[data-theme='light'] .custom-text-Close{
+  color: hsl(235, 19%, 35%);
+ 
+}
+[data-theme='light'] .custom-text-Open  {
+ 
+    text-decoration: line-through hsl(236, 9%, 61%);
+}
+ [data-theme='light']  .DivInfo {
+ 
+    background-color: hsl(0, 0%, 98%);
+}
+}
+
+ 

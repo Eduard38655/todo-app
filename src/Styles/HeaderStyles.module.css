@@ -1,0 +1,61 @@
+.Header_Container{
+width: 100%;
+height: 90px;
+display: flex;
+align-items: center;
+justify-content: center;
+ 
+}
+.Div_Header_Container{
+    width: 80%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+}
+.Div_Header_Container h1{
+    font-size:40px;
+    font-weight: 800;
+    letter-spacing: 10px;
+    color: white;
+    font-family: "Josefin Sans", sans-serif;
+font-weight: 600;
+}
+ .Div_Header_Container button{
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-top: 40px;
+  }
+ .Div_Header_Container img{
+    width: 30px;
+    height: 30px;
+  
+  }
+
+  @media screen and (min-width:375px) and (max-width:415px){
+  .Header_Container{
+width: 100%;
+height: 90px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+justify-content: center;
+}
+    .Div_Header_Container{
+    width: 89%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+    
+}
+  
+
+  
+  
+  }

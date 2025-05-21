@@ -1,0 +1,235 @@
+.Detalles_Container{
+    width: 100%;
+height: 55px;
+background-color: hsl(237, 14%, 26%);
+display: flex;
+align-items: center;
+ 
+flex-direction: column;
+justify-content: space-between;
+font-size: 18px;
+font-family: "Josefin Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+}
+.DivManageOp{
+width: 100%;
+height: 55px;
+background-color: hsl(237, 14%, 26%);
+display: flex;
+align-items: center;
+flex-direction: row;
+justify-content: space-between;
+font-size: 18px;
+font-family: "Josefin Sans", sans-serif;
+font-optical-sizing: auto;
+font-style: normal;
+   
+}
+.Error_Text{
+    width: 93.5%;
+    height: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: hsl(236, 33%, 92%);
+    font-family: "Josefin Sans", sans-serif;
+  background-color: hsl(237, 14%, 26%);
+ 
+padding: 17px;
+  
+     margin-bottom: -0px;
+    border-bottom: 1px solid hsl(233, 14%, 35%);
+   
+   
+}
+.DivManageOp div{
+    width: 24%;
+    
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
+ 
+ 
+}
+
+.DivManageOp div button{
+    width: 20px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+ font-weight: 600;
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(234, 11%, 52%);
+}
+.DivManageOp div button:active{
+    color: hsl(220, 98%, 61%);
+}
+.DivManageOp div button:focus{
+    color: hsl(220, 98%, 61%);
+}
+
+.DivManageOp div button:hover{
+    color: hsl(233, 11%, 84%);
+}
+.DivManageOp  button{
+    width: 150px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+      font-weight: 600;
+      color:hsl(234, 11%, 52%);
+ font-family: "Josefin Sans", sans-serif;
+}
+.DivManageOp button:active{
+    color: hsl(220, 98%, 61%);
+}
+.DivManageOp  button:focus{
+    color: hsl(220, 98%, 61%);
+}
+.DivManageOp button:hover{
+    color: hsl(233, 11%, 84%);
+}
+.DivManageOp p {
+    font-size: 18px;
+     font-weight: 600;
+    height: 20px;
+    cursor:pointer;
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(234, 11%, 52%);
+ 
+}
+.DivManageOp  span{
+    height: 20px;
+     font-size: 16px;
+       font-weight: 600;
+       margin-right: 8px;
+       margin-left: 30px;
+}
+ 
+ [data-theme='light'] .DivManageOp  {
+         background-color: hsl(0, 0%, 98%);
+ }  
+ 
+[data-theme='light']  .Error_Text{
+         background-color: hsl(0, 0%, 98%);
+         color: hsl(235, 19%, 35%);
+ }  
+.Mobile_ManageOp{
+   display: none;
+}
+ 
+@media screen and (min-width:375px) and (max-width:415px){
+
+   .Detalles_Container{
+    display: none;
+}
+  .DivManageOp{
+    display: none;
+   }
+   [data-theme='dark'] .Mobile_ManageOp  {
+       background : none;
+ }  
+  
+    .Mobile_ManageOp{
+    width: 100%;
+    height: 115px;
+    display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+  background: none;
+   }
+   [data-theme='dark'] .Div_MobileOp  {
+    
+      background-color: hsl(237, 14%, 26%);
+ }
+  
+ [data-theme='light'] .Div_MobileOp  {
+      background-color: hsl(0, 0%, 98%);
+       box-shadow: 0px 5px 5px 0px hsl(236, 9%, 61%);
+
+ }
+ [data-theme='light'] .Mobile_Buttons  {
+      background-color: hsl(0, 0%, 98%);
+       box-shadow: 0px 0px 5px 0px hsl(236, 9%, 61%);
+
+ }  
+  
+   .Div_MobileOp{
+    width: 100%;
+    height: 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: hsl(237, 14%, 26%);
+ 
+   
+   }
+    .Div_MobileOp button{
+        width: 150px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+ font-weight: 600;
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(234, 11%, 52%);
+    
+    }
+      .Div_MobileOp p{
+ font-size: 15px;
+     font-weight: 600;
+    height: 20px;
+    cursor:pointer;
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(234, 11%, 52%);
+      }
+
+ .Div_MobileOp span{
+    height: 20px;
+     font-size: 15px;
+       font-weight: 600;
+       margin-right: 8px;
+       margin-left: 2px;
+}
+   .Mobile_Buttons{
+        width: 100%;
+    height: 50px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(237, 14%, 26%);
+    border-radius: 5px;
+   }
+
+.Mobile_Buttons button{
+    width: 80px;
+    height: 30px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 15px;
+ font-weight: 600;
+    font-family: "Josefin Sans", sans-serif;
+    color: hsl(234, 11%, 52%);
+    
+} [data-theme='light']  .Error_Text{
+    width: 90.4%;    
+    background-color: hsl(0, 0%, 98%);
+         color: hsl(235, 19%, 35%);
+  box-shadow: 0px 25px 15px 0px hsl(236, 9%, 61%);
+
+        }
+
+
+}
