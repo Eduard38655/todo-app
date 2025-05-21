@@ -14,29 +14,24 @@ app.use("/",InsertarData)
 app.use("/",GetData)
 app.use("/",NewData)
 app.use("/",ClearItems)
-
-app.use(cors({ origin: true, credentials: true,allowList }));
-
- // Lista de orígenes permitidos
-const allowList = [
-  'http://localhost:5173',
-  'https://eduard38655.github.io',
-  'http://10.0.0.86:5173',
-  'https://todo-app-ejux.onrender.com'
-];
- 
-// Configuración de CORS
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (!origin || allowList.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('No permitido por CORS'));
-    }
-  },
-  credentials: true,
-  exposedHeaders: ['set-cookie'],
-};
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      const allowList = [
+        'http://localhost:5173',
+        'https://eduard38655.github.io',
+        'http://10.0.0.86:5173',
+        'https://todo-app-ejux.onrender.com'
+      ];
+      if (!origin || allowList.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('No permitido por CORS'));
+      }
+    },
+    credentials: true
+  })
+);
 
 let PORT= process.env.port
  app.listen(PORT, () => {
