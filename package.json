@@ -1,6 +1,6 @@
 {
   "name": "todo-app",
-  "homepage":"https://Eduard38655.github.io/todo-app",
+  "homepage": "https://Eduard38655.github.io/todo-app",
   "repository": "https://github.com/Eduard38655/todo-app",
   "version": "1.0.0",
   "main": "RouteController.js",
@@ -109,6 +109,7 @@
     "qs": "^6.13.0",
     "range-parser": "^1.2.1",
     "raw-body": "^2.5.2",
+    "react-beautiful-dnd": "^13.1.1",
     "react-router-dom": "^7.1.5",
     "react-slick": "^0.30.3",
     "readable-stream": "^4.5.2",
