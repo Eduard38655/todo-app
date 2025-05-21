@@ -10,7 +10,7 @@ const [Run,SetRun]=useState(false)
 let Item_Status="";
 
   useEffect(() => {
-     fetch("https://todo-app-ejux.onrender.com/GetData")
+     fetch("http://localhost:3000/GetData")
        .then((response) => response.json())
        .then((data) => {
          if (data) {
@@ -32,7 +32,7 @@ async function handleKeyDown(e) {
         
       Item_Status="Close"
       }
-      const response = await fetch("https://todo-app-ejux.onrender.com/InsertData", {
+      const response = await fetch("http://localhost:3000/InsertData", {
         method: "POST",
         headers: { "content-type": "Application/JSON" },
         body: JSON.stringify({ Details,Item_Status})

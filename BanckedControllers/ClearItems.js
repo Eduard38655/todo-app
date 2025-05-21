@@ -1,32 +1,63 @@
-// routes.js o como lo hayas nombrado
 import express from "express";
-import pool from "./DataBase_PG.js";
+import SQL from "mssql";
+import dbconfig from "./DataBase_SQL.js";
 
 const router = express.Router();
 
-router.delete("/Clear", async (req, res) => {
-  try {
-    const result = await pool.query("DELETE FROM TODO WHERE Status = 'Open'");
-    res.json({ data: result.rowCount });
-  } catch (error) {
-    console.error("Error executing Clear:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-});
+ 
 
-router.delete("/ClearDatos", async (req, res) => {
-  const { ItemsID } = req.body;
+  router.delete("/Clear",(req,res)=>{
+ 
+  
+ SQL.connect(dbconfig).then(pool=>{
+     return pool.request()
+ 
+    .query("DELETE TODO WHERE Status='Open' ")
+ })
+ .then(result=>{
+    try {
+      if (result.rowsAffected.length>0) {
+          res.json({data:result.rowsAffected})
+      } else {
+        console.error("There was an error: ");
+        
+      }
+    } catch (error) {
+     console.error(error);
+        
+    }
+ })
+ .catch(error=>console.error(error)
+ )
 
-  try {
-    const result = await pool.query(
-      "DELETE FROM TODO WHERE TodoID = $1",
-      [ItemsID]
-    );
-    res.json({ data: result.rowCount });
-  } catch (error) {
-    console.error("Error executing ClearDatos:", error);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
-});
+}) 
 
-export default router;
+
+
+  router.delete("/ClearDatos",(req,res)=>{
+ const {ItemsID}=req.body
+  
+ SQL.connect(dbconfig).then(pool=>{
+     return pool.request()
+ .input("ItemsID",SQL.Int,ItemsID)
+  .query("DELETE TODO WHERE TodoID=@ItemsID")
+ })
+ .then(result=>{
+    try {
+      if (result.rowsAffected.length>0) {
+          res.json({data:result.rowsAffected})
+      } else {
+        console.error("There was an error: ");
+        
+      }
+    } catch (error) {
+     console.error(error);
+        
+    }
+ })
+ .catch(error=>console.error(error)
+ )
+
+}) 
+
+export default router

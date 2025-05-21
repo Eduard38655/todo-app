@@ -18,7 +18,7 @@ function SubmenuOp(params) {
       // Función que obtiene los datos del backend
       const fetchData = async () => {
         try {
-          const response = await fetch("https://todo-app-ejux.onrender.com/GetData");
+          const response = await fetch("http://localhost:3000/GetData");
           const data = await response.json();
           if (data && data.data) {
             SetDatos(data.data);
@@ -43,7 +43,7 @@ function SubmenuOp(params) {
       // Elimina ítems completados
       async function Clear_Completed() {
         try {
-          await fetch("https://todo-app-ejux.onrender.com/Clear", {
+          await fetch("http://localhost:3000/Clear", {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
           });

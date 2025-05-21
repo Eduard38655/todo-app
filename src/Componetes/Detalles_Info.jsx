@@ -11,7 +11,7 @@ function Detalles_Info() {
   const [Run,SetRun]=useState(false)
   
  useEffect(() => {
-    fetch("https://todo-app-ejux.onrender.com/GetData")
+    fetch("http://localhost:3000/GetData")
       .then((response) => response.json())
       .then((data) => {
         if (data) {
@@ -25,7 +25,7 @@ function Detalles_Info() {
 }, [Run]);
 
   useEffect(() => {
-    fetch("https://todo-app-ejux.onrender.com/GetData")
+    fetch("http://localhost:3000/GetData")
       .then((response) => response.json())
       .then((data) => {
         if (data) {
@@ -43,7 +43,7 @@ function Detalles_Info() {
     const newStatus = currentStatus === "Open" ? "Close" : "Open";
  
 
-    fetch("https://todo-app-ejux.onrender.com/UpdateStatus", {
+    fetch("http://localhost:3000/UpdateStatus", {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ TodoID, Status: newStatus }),
@@ -70,7 +70,7 @@ const onDragEnd = (result) => {
       
       // Actualizar posiciones en la base de datos
       items.forEach((item, index) => {
-        fetch("https://todo-app-ejux.onrender.com/UpdatePosition", {
+        fetch("http://localhost:3000/UpdatePosition", {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ TodoID: item.TodoID, Position: index }),

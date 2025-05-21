@@ -14,26 +14,34 @@ app.use("/",InsertarData)
 app.use("/",GetData)
 app.use("/",NewData)
 app.use("/",ClearItems)
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      const allowList = [
-        'http://localhost:5173',
-        'https://eduard38655.github.io',
-        'http://10.0.0.86:5173',
-        'https://todo-app-ejux.onrender.com'
-      ];
-      if (!origin || allowList.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error('No permitido por CORS'));
-      }
-    },
-    credentials: true
-  })
-);
+
+app.use(cors({ origin: [
+  'http://localhost:5173',
+  'https://eduard38655.github.io',
+  'http://10.0.0.86:5173'
+]}));
+ // Lista de orígenes permitidos
+const allowList = [
+  'http://localhost:5173',
+  'https://eduard38655.github.io',
+  'http://10.0.0.86:5173'
+];
  
- app.listen(5432, () => {
-  console.log(`Server is running on port ${5432}`);
+// Configuración de CORS
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (!origin || allowList.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('No permitido por CORS'));
+    }
+  },
+  credentials: true,
+  exposedHeaders: ['set-cookie'],
+};
+
+
+ app.listen(3000, () => {
+  console.log(`Server is running on port 3000`);
 });
  
