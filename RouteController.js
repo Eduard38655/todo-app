@@ -1,7 +1,6 @@
 import cors from "cors";
 import "dotenv/config";
 import express from 'express';
-import ClearItems from "../todo-app/BanckedControllers/ClearItems.js";
 import Dependecies from "../todo-app/BanckedControllers/Dependecies.js";
 import GetData from "../todo-app/BanckedControllers/GetData.js";
 import InsertarData from "../todo-app/BanckedControllers/InsertData.js";
