@@ -1,12 +1,12 @@
 import cors from "cors";
 import "dotenv/config";
 import express from 'express';
-import { Dependecies } from "../todo-app/BanckedControllers/Dependecies.js";
-import { GetData } from "../todo-app/BanckedControllers/GetData.js";
-import { InsertarData } from "../todo-app/BanckedControllers/InsertData.js";
-import { NewData } from "../todo-app/BanckedControllers/Optiones.js";
+import { InsertarData } from "../todo-app/InsertData.js";
+import { NewData } from "./BOptiones.js";
+import { ClearItems } from "./ClearItems.js";
+import { Dependecies } from "./Dependecies.js";
+import { GetData } from "./GetData.js";
 
-/*DataBase Info*/
 const app = express();
 
 app.use("/",Dependecies)
