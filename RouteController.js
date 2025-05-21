@@ -1,11 +1,11 @@
 import cors from "cors";
 import "dotenv/config";
 import express from 'express';
-import ClearItems from "../todo-app/BanckedControllers/ClearItems.js";
-import Dependecies from "../todo-app/BanckedControllers/Dependecies.js";
-import GetData from "../todo-app/BanckedControllers/GetData.js";
-import InsertarData from "../todo-app/BanckedControllers/InsertData.js";
-import NewData from "../todo-app/BanckedControllers/Optiones.js";
+import ClearItems from "./BanckedControllers/ClearItems.js";
+import Dependecies from "./BanckedControllers/Dependecies.js";
+import GetData from "./BanckedControllers/GetData.js";
+import InsertarData from "./BanckedControllers/InsertData.js";
+import NewData from "./BanckedControllers/Optiones.js";
 
 const app = express();
 
