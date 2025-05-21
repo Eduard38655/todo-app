@@ -15,16 +15,14 @@ app.use("/",GetData)
 app.use("/",NewData)
 app.use("/",ClearItems)
 
-app.use(cors({ origin: [
-  'http://localhost:5173',
-  'https://eduard38655.github.io',
-  'http://10.0.0.86:5173'
-]}));
+app.use(cors({ origin: true, credentials: true,allowList }));
+
  // Lista de orígenes permitidos
 const allowList = [
   'http://localhost:5173',
   'https://eduard38655.github.io',
-  'http://10.0.0.86:5173'
+  'http://10.0.0.86:5173',
+  'https://todo-app-ejux.onrender.com'
 ];
  
 // Configuración de CORS
