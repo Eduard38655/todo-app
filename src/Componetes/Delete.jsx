@@ -15,7 +15,7 @@ const [Run,SetRun]=useState(false)
 
 /**Revisar  */
     useEffect(() => {
-        fetch("http://localhost:3000/GetData")
+        fetch("https://todo-app-ejux.onrender.com/GetData")
           .then((response) => response.json())
           .then((data) => {
             if (data) {
@@ -30,10 +30,10 @@ const [Run,SetRun]=useState(false)
     
     
     async function DeleteItem(ItemsID) {
-  console.log(ItemsID,"m");
+  console.log(ItemsID);
 
   
-    const response = await fetch("http://localhost:3000/ClearDatos", {
+    const response = await fetch("https://todo-app-ejux.onrender.com/ClearDatos", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
