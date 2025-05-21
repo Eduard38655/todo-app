@@ -7,6 +7,7 @@ import GetData from "../todo-app/BanckedControllers/GetData.js";
 import InsertarData from "../todo-app/BanckedControllers/InsertData.js";
 import NewData from "../todo-app/BanckedControllers/Optiones.js";
 
+/*DataBase Info*/
 const app = express();
 
 app.use("/",Dependecies)
